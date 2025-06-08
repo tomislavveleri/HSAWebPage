@@ -1,0 +1,730 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes appearAboutUs {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+body {
+  height: 1500px;
+  margin: 0;
+  padding: 0;
+  background-image: url("pictures/mainPictureSmaller.jpg");
+  background-size: cover;
+  justify-self: center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: antiquewhite;
+  font-size: large;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0)
+  );
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.left {
+  display: flex;
+  justify-content: space-between;
+}
+.extraLeft {
+  margin-left: 40px;
+  background-color: antiquewhite;
+  width: 200px;
+  font-size: large;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  border-radius: 12px;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  align-self: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.title {
+  width: 600px;
+
+  color: antiquewhite;
+  font-size: 100px;
+  justify-self: center;
+  margin-top: 9%;
+  text-align: center;
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  animation: appear 1.5s;
+
+  animation-range: entry 0% cover 40%;
+}
+.slogan {
+  color: antiquewhite;
+  font-family: "Italiana", sans-serif;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+  font-style: normal;
+  font-size: xxx-large;
+  margin-top: 10%;
+  margin-left: 10%;
+  width: 300px;
+  animation: appear 6s;
+
+  animation-range: entry 0% cover 40%;
+}
+
+.aboutUs {
+  background-color: antiquewhite;
+  width: 100%;
+  margin-top: 30%;
+
+  height: 40%;
+  justify-items: center;
+  font-size: x-large;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.aTitle p {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: xxx-large;
+  padding-top: 200px;
+  animation: appearAboutUs linear;
+  animation-timeline: view();
+
+  animation-range: entry 0% cover 40%;
+}
+
+.aboutUs p {
+  margin-top: 1%;
+  animation: appearAboutUs linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+.info {
+  width: 100%;
+  height: 300px;
+  background-color: rgb(65, 46, 38);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.destinations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+
+  border: solid antiquewhite;
+  transition: transform 0.3s ease;
+  background-color: rgb(65, 46, 38);
+}
+.mapBackground {
+  background-color: antiquewhite;
+  height: 400px;
+}
+iframe {
+  width: 100%;
+  height: 400px;
+  border-style: none;
+}
+.destinations:hover {
+  transform: scale(1.05);
+}
+.destinations p {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: x-large;
+  color: antiquewhite;
+}
+
+.largerP {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 75px;
+  color: antiquewhite;
+}
+.pictures {
+  width: 100%;
+  height: 700px;
+  background-color: rgb(65, 46, 38);
+  justify-items: center;
+  padding-top: 3%;
+  padding-bottom: 5%;
+}
+.slideShow {
+  margin-top: 2%;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.slideShow:hover {
+  transform: scale(1.05);
+}
+
+.slide {
+  display: none;
+  z-index: 0;
+  position: relative;
+  border-radius: 12px;
+  border: solid antiquewhite;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+.nav {
+  position: absolute;
+  z-index: 1;
+
+  padding-bottom: 10px;
+  bottom: 0px;
+  left: 20px;
+  width: 100%;
+}
+.nav p {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: antiquewhite;
+
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+  width: 20%;
+}
+.nav button {
+  background: rgba(255, 255, 255, 0.1); /* transparent glass look */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s, transform 0.2s;
+  margin-left: 26%;
+}
+
+.nav button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+.nav2 {
+  position: absolute;
+  z-index: 1;
+
+  padding-bottom: 10px;
+  bottom: 0px;
+  left: 125px;
+
+  width: 70%;
+}
+.nav2 p {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: antiquewhite;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+}
+.nav2 button {
+  background: rgba(255, 255, 255, 0.1); /* transparent glass look */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s, transform 0.2s;
+  margin-left: 30%;
+}
+
+.nav2 button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+.nav3 {
+  position: absolute;
+  z-index: 1;
+
+  padding-bottom: 10px;
+  bottom: 0px;
+
+  width: 70%;
+}
+.nav3 p {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: antiquewhite;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+  margin-left: 30px;
+}
+.nav3 button {
+  background: rgba(255, 255, 255, 0.1); /* transparent glass look */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s, transform 0.2s;
+  margin-left: 37%;
+}
+
+.nav3 button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+.nav4 {
+  position: absolute;
+  z-index: 1;
+
+  padding-bottom: 10px;
+  bottom: 0px;
+  left: 125px;
+  width: 70%;
+}
+.nav4 p {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: antiquewhite;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+}
+.nav4 button {
+  background: rgba(255, 255, 255, 0.1); /* transparent glass look */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s, transform 0.2s;
+  margin-left: 30%;
+}
+
+.nav4 button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.gastronomy {
+  width: 100%;
+  height: 700px;
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 10%;
+}
+.gastronomyPic {
+  grid-column: 1;
+  display: flex;
+  width: 100%;
+  height: 80%;
+  position: relative;
+
+  transition: transform 0.3s ease;
+}
+.gastronomyPic:hover {
+  transform: scale(1.05);
+}
+.slide2 {
+  margin-left: 10%;
+  border: solid rgb(65, 46, 38);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+
+.gastronomyText {
+  display: flex;
+  grid-column: 2;
+
+  width: 100%;
+  height: 80%;
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: rgb(65, 46, 38);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  animation: appearGastronomy linear;
+  animation-timeline: view();
+
+  animation-range: entry 0% cover 40%;
+}
+
+.accomodation {
+  width: 100%;
+  height: 700px;
+  background-color: rgb(65, 46, 38);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+.accomodationPic {
+  grid-column: 2;
+  position: relative;
+  width: 100%;
+  height: 80%;
+
+  transition: transform 0.3s ease;
+  animation: appearGastronomy linear;
+  animation-timeline: view();
+
+  animation-range: entry 0% cover 40%;
+}
+.accomodationPic:hover {
+  transform: scale(1.05);
+}
+.slide3 {
+  border: solid antiquewhite;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  width: 90%;
+}
+
+.accomodationText {
+  display: flex;
+  grid-column: 1;
+  padding-left: 5%;
+  width: 90%;
+
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: antiquewhite;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  animation: appearGastronomy linear;
+  animation-timeline: view();
+}
+.pool {
+  width: 100%;
+  height: 700px;
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 10%;
+}
+.poolPic {
+  grid-column: 1;
+  display: flex;
+  width: 100%;
+  height: 80%;
+  position: relative;
+
+  transition: transform 0.3s ease;
+}
+.poolPic:hover {
+  transform: scale(1.05);
+}
+.slide4 {
+  margin-left: 10%;
+  border: solid rgb(65, 46, 38);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+
+.poolText {
+  display: flex;
+  grid-column: 2;
+
+  width: 100%;
+  height: 80%;
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  color: rgb(65, 46, 38);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  animation: appearGastronomy linear;
+  animation-timeline: view();
+
+  animation-range: entry 0% cover 40%;
+}
+
+@media (max-width: 600px) {
+  body {
+    height: 1500px;
+    margin: 0;
+    padding: 0;
+    background-image: url("pictures/mainPictureSmaller.jpg");
+
+    background-size: cover;
+    justify-self: center;
+    margin-left: 80%;
+    background-position: 30%;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    color: antiquewhite;
+    font-size: large;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0)
+    );
+    position: sticky;
+    top: 0;
+    width: 80%;
+    margin-left: 20%;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  .title {
+    width: 600px;
+    margin-left: 15%;
+    color: antiquewhite;
+    font-size: 100px;
+    justify-self: center;
+    margin-top: 9%;
+    text-align: center;
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    animation: appear 1.5s;
+
+    animation-range: entry 0% cover 40%;
+  }
+  .slogan {
+    color: rgb(65, 46, 38);
+    font-family: "Italiana", sans-serif;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+    font-style: normal;
+    font-size: xxx-large;
+    margin-top: 15%;
+    margin-left: 45%;
+    width: 300px;
+    animation: appear 6s;
+
+    animation-range: entry 0% cover 40%;
+  }
+
+  .aboutUs {
+    background-color: antiquewhite;
+    width: 80%;
+    margin-top: 30%;
+    margin-left: 20%;
+    height: 40%;
+    justify-items: center;
+    font-size: x-large;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .mapBackground {
+    background-color: antiquewhite;
+    height: 400px;
+    width: 80%;
+    margin-left: 20%;
+  }
+  .info {
+    display: none;
+  }
+  .pictures {
+    width: 80%;
+    margin-left: 20%;
+    height: 700px;
+    background-color: rgb(65, 46, 38);
+    justify-items: center;
+    padding-top: 3%;
+    padding-bottom: 5%;
+  }
+  .slideShow {
+    margin-top: 6%;
+    position: relative;
+    transition: transform 0.3s ease;
+
+    justify-items: center;
+  }
+  .slide {
+    display: none;
+    z-index: 0;
+    position: relative;
+    border-radius: 12px;
+    border: solid antiquewhite;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    width: 80%;
+  }
+
+  .gastronomy {
+    width: 80%;
+    margin-left: 20%;
+    height: 700px;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 10%;
+  }
+  .gastronomyPic {
+    grid-column: 1;
+    display: flex;
+    width: 30%;
+    height: 30%;
+    position: relative;
+
+    transition: transform 0.3s ease;
+  }
+  .gastronomyPic:hover {
+    transform: scale(1.05);
+  }
+  .slide2 {
+    margin-left: 10%;
+    border: solid rgb(65, 46, 38);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+  }
+  .gastronomyText {
+    display: flex;
+    grid-column: 2;
+
+    width: 20%;
+    height: 20%;
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(65, 46, 38);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    animation: appearGastronomy linear;
+    animation-timeline: view();
+
+    animation-range: entry 0% cover 40%;
+  }
+  .accomodation {
+    width: 80%;
+    margin-left: 20%;
+    height: 700px;
+    background-color: rgb(65, 46, 38);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
+  .accomodationPic {
+    grid-column: 2;
+    position: relative;
+    width: 100%;
+    height: 80%;
+
+    transition: transform 0.3s ease;
+    animation: appearGastronomy linear;
+    animation-timeline: view();
+
+    animation-range: entry 0% cover 40%;
+  }
+  .accomodationPic:hover {
+    transform: scale(1.05);
+  }
+  .slide3 {
+    border: solid antiquewhite;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    width: 90%;
+  }
+
+  .accomodationText {
+    display: flex;
+    grid-column: 1;
+    padding-left: 15%;
+    width: 60%;
+
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    color: antiquewhite;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    animation: appearGastronomy linear;
+    animation-timeline: view();
+  }
+  .pool {
+    width: 80%;
+    margin-left: 20%;
+    height: 700px;
+    background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 10%;
+  }
+  .poolPic {
+    grid-column: 1;
+    display: flex;
+    width: 30%;
+    height: 30%;
+    position: relative;
+
+    transition: transform 0.3s ease;
+  }
+  .poolPic:hover {
+    transform: scale(1.05);
+  }
+  .slide4 {
+    margin-left: 10%;
+    border: solid rgb(65, 46, 38);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+  }
+
+  .poolText {
+    display: flex;
+    grid-column: 2;
+
+    width: 100%;
+    height: 80%;
+    font-family: "Italiana", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(65, 46, 38);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    animation: appearGastronomy linear;
+    animation-timeline: view();
+
+    animation-range: entry 0% cover 40%;
+  }
+}
